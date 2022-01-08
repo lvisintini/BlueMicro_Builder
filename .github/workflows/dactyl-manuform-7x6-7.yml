@@ -1,6 +1,6 @@
 # This file was created using ./ErgoTravel-split.yml as a template
-# The most significant change is that it loads the firmware files from dactyl-manuform-6-7x7 https://github.com/lvisintini/BlueMicro_BLE.git instead.
-name: Dactyl-Manuform-6-7x7
+# The most significant change is that it loads the firmware files from dactyl-manuform-7x6-7 https://github.com/lvisintini/BlueMicro_BLE.git instead.
+name: Dactyl-Manuform-7x6-7
 
 # You will need to manually trigger this workflow
 on:  ['workflow_dispatch']
@@ -14,7 +14,7 @@ jobs:
       matrix:
         # Replace the following with the keyboard you want to setup.  
         # Only 1 keyboard is supported.  For more keyboards, copy and rename this file.
-        keyboard: ['dactyl_manuform_6-7x7']
+        keyboard: ['dactyl_manuform_7x6-7']
         # Keymap of the keyboard to setup.  Multiple keymaps can be setup following this example: ['default','jpconstantineau']
         keymap: ['default']
         # keyboard configuration. Multiple configs can be setup following this example: ['left','right']
@@ -48,7 +48,7 @@ jobs:
       - name: clone BlueMicro_BLE repository
         if: ${{ steps.job_conditions.outputs.firmware-here == 'false' }}
         run: |
-          git clone -b dactyl-manuform-6-7x7 https://github.com/lvisintini/BlueMicro_BLE.git
+          git clone -b dactyl-manuform-7x6-7 https://github.com/lvisintini/BlueMicro_BLE.git
       - name: setup job variables
         id: job_variables
         run: |
